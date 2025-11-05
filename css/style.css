@@ -1,0 +1,101 @@
+/* Estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+}
+
+/* Tipografia */
+h1, h2, h3 {
+  margin: 20px 0;
+}
+
+/* Links e botões */
+a, button, input[type="submit"] {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #333;
+  display: inline-block;
+  background: none;
+  cursor: pointer;
+}
+
+a:hover, button:hover, input[type="submit"]:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Navegação */
+nav {
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  border-bottom: 2px solid #333;
+}
+
+/* Formulários */
+form {
+  max-width: 500px;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+/* Utilitários */
+.text-right { text-align: right; }
+.mt-20 { margin-top: 20px; }
+
+/* Rodapé */
+footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}

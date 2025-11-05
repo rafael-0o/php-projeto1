@@ -1,19 +1,39 @@
 <?php
-
     require "config.inc.php";
+    include "includes/header.php";
+?>
 
-    echo "<p><a href='?pg=contatos-cadastro-form'>Cadastrar Contato</a></p>";
-    echo "<h2>Lista de Contatos</h2>";
+<div class="text-right">
+    <a href="contatos-cadastro-form.php">Cadastrar Contato</a>
+</div>
 
-    $sql = "SELECT * FROM contatos";
-    $resultado = mysqli_query($conexao, $sql);
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $sql = "SELECT * FROM contatos";
+        $resultado = mysqli_query($conexao, $sql);
 
-    while($dados = mysqli_fetch_array($resultado)){
-        echo "Id: ".$dados['id']." | ";
-        echo "Nome: ".$dados['nome']." | ";
-        echo "Numero: ".$dados['numero']." | ";
-        echo "Email: ".$dados['email']." | ";
-        echo " | <a href='?pg=contatos-altera-form&id=$dados[id]'>Alterar</a>";
-        echo " | <a href='?pg=contatos-excluir&id=$dados[id]'>Excluir</a>";
-        echo "<hr>";
-    }
+        while($dados = mysqli_fetch_array($resultado)) {
+            echo "<tr>";
+            echo "<td>".$dados['nome']."</td>";
+            echo "<td>".$dados['numero']."</td>";
+            echo "<td>".$dados['email']."</td>";
+            echo "<td>";
+            echo "<a href='contatos-altera-form.php?id=".$dados['id']."'>Alterar</a> ";
+            echo "<a href='contatos-excluir.php?id=".$dados['id']."' onclick='return confirm(\"Confirmar exclusão?\")'>Excluir</a>";
+            echo "</td>";
+            echo "</tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
+<?php include "includes/footer.php"; ?>
